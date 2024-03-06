@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct SearchResponse: Codable {
+public struct SearchResponse: Codable {
     let results: [SearchResult]?
 }
 
-struct SearchResult: Codable, Identifiable, Hashable {
+public struct SearchResult: Codable, Identifiable, Hashable {
     let backdrop_path: String?
-    let id: Int
+    public let id: Int
     let name: String?
     let title: String?
     let original_language: String?

@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct DiscoverResponse: Codable {
+public struct DiscoverResponse: Codable {
     let results: [Items]?
 }

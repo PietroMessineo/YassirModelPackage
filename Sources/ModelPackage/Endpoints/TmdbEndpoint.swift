@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TmdbEndpoint {
+public enum TmdbEndpoint {
     case editorsChoice
     case getMovieDetails(id: String)
     case getMovieDiscover(page: Int, movieList: DiscoverMovieList)
@@ -16,7 +16,7 @@ enum TmdbEndpoint {
 }
 
 extension TmdbEndpoint: Endpoint {
-    var queryItems: [URLQueryItem]? {
+    public var queryItems: [URLQueryItem]? {
         switch self {
         case .editorsChoice:
             return nil
@@ -60,7 +60,7 @@ extension TmdbEndpoint: Endpoint {
         }
     }
     
-    var path: String {
+    public var path: String {
         switch self {
         case .editorsChoice:
             return "/3/list/8293039"
@@ -75,7 +75,7 @@ extension TmdbEndpoint: Endpoint {
         }
     }
 
-    var method: RequestMethod {
+    public var method: RequestMethod {
         switch self {
         case .editorsChoice:
             return .get
@@ -90,7 +90,7 @@ extension TmdbEndpoint: Endpoint {
         }
     }
 
-    var header: [String: String]? {
+    public var header: [String: String]? {
         switch self {
         case .editorsChoice:
             return nil
@@ -105,7 +105,7 @@ extension TmdbEndpoint: Endpoint {
         }
     }
     
-    var body: [String: Any]? {
+    public var body: [String: Any]? {
         switch self {
         case .editorsChoice:
             return nil
@@ -121,7 +121,7 @@ extension TmdbEndpoint: Endpoint {
     }
 }
 
-enum DiscoverMovieList: String {
+public enum DiscoverMovieList: String {
     case popular = "Popular"
     case upcoming = "Coming soon"
 }

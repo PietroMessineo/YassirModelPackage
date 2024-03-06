@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MockTmdbService: TmdbServiceProtocol {
+public class MockTmdbService: TmdbServiceProtocol {
     var shouldReturnError: Bool = false
     var editorsChoiceResponseToReturn: EditorsChoiceResponse?
     var movieDetailsToReturn: MovieDetailsResponse?
@@ -15,7 +15,7 @@ class MockTmdbService: TmdbServiceProtocol {
     var searchToReturn: SearchResponse?
     var watchProvidersToReturn: WatchProvidersResponse?
     
-    func getEditorsChoice() async throws -> EditorsChoiceResponse {
+    public func getEditorsChoice() async throws -> EditorsChoiceResponse {
         if shouldReturnError {
             throw MockServiceError.dataNotFound
         }
@@ -27,7 +27,7 @@ class MockTmdbService: TmdbServiceProtocol {
         return response
     }
     
-    func getDiscover(page: Int, movieList: DiscoverMovieList) async throws -> DiscoverResponse {
+    public func getDiscover(page: Int, movieList: DiscoverMovieList) async throws -> DiscoverResponse {
         if shouldReturnError {
             throw MockServiceError.dataNotFound
         }
@@ -39,7 +39,7 @@ class MockTmdbService: TmdbServiceProtocol {
         return response
     }
     
-    func getMovieDetails(id: String) async throws -> MovieDetailsResponse {
+    public func getMovieDetails(id: String) async throws -> MovieDetailsResponse {
         if shouldReturnError {
             throw MockServiceError.dataNotFound
         }
@@ -51,7 +51,7 @@ class MockTmdbService: TmdbServiceProtocol {
         return response
     }
     
-    func getMovieDiscover(page: Int, movieList: DiscoverMovieList) async throws -> DiscoverResponse {
+    public func getMovieDiscover(page: Int, movieList: DiscoverMovieList) async throws -> DiscoverResponse {
         if shouldReturnError {
             throw MockServiceError.dataNotFound
         }
@@ -63,7 +63,7 @@ class MockTmdbService: TmdbServiceProtocol {
         return response
     }
     
-    func searchFor(query: String) async throws -> SearchResponse {
+    public func searchFor(query: String) async throws -> SearchResponse {
         if shouldReturnError {
             throw MockServiceError.dataNotFound
         }
@@ -75,7 +75,7 @@ class MockTmdbService: TmdbServiceProtocol {
         return response
     }
     
-    func getMovieWatchProviders(movieId: String) async throws -> WatchProvidersResponse {
+    public func getMovieWatchProviders(movieId: String) async throws -> WatchProvidersResponse {
         if shouldReturnError {
             throw MockServiceError.dataNotFound
         }
@@ -88,6 +88,6 @@ class MockTmdbService: TmdbServiceProtocol {
     }
 }
 
-enum MockServiceError: Error {
+public enum MockServiceError: Error {
     case dataNotFound
 }

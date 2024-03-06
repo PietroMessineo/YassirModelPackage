@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct WatchProvidersResponse: Codable, Identifiable {
-    let id: Int
+public struct WatchProvidersResponse: Codable, Identifiable {
+    public let id: Int
     let results: [String: CountryResult]
 }
 
-struct CountryResult: Codable {
+public struct CountryResult: Codable {
     let link: String
     let buy, rent, flatrate: [Provider]?
 
@@ -22,8 +22,8 @@ struct CountryResult: Codable {
     }
 }
 
-struct Provider: Codable, Identifiable {
-    let id = UUID().uuidString
+public struct Provider: Codable, Identifiable {
+    public let id = UUID().uuidString
     let logoPath: String
     let providerID: Int
     let providerName: String

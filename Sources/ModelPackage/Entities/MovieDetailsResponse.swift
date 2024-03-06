@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MovieDetailsResponse: Codable {
+public struct MovieDetailsResponse: Codable {
     let success: Bool?
     let id: Int?
     let original_title: String?
@@ -19,12 +19,12 @@ struct MovieDetailsResponse: Codable {
     let runtime: Int?
 }
 
-struct Credits: Codable {
+public struct Credits: Codable {
     let cast: [Person]?
     let crew: [Person]?
 }
 
-struct Person: Codable {
+public struct Person: Codable {
     let name: String?
     let character: String?
     let id: Int
@@ -33,11 +33,11 @@ struct Person: Codable {
     let poster_path: String?
 }
 
-struct Videos: Codable {
+public struct Videos: Codable {
     let results: [Results]?
 }
 
-struct Results: Codable {
+public struct Results: Codable {
     let name: String?
     let type: String?
     let published_at: String?

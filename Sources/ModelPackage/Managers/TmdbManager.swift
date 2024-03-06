@@ -8,7 +8,7 @@
 import Foundation
 
 @MainActor
-final class TmdbManager: ObservableObject {
+public final class TmdbManager: ObservableObject {
     
     // Service protocol to abstract TMDB service details
     let service: TmdbServiceProtocol
@@ -26,7 +26,7 @@ final class TmdbManager: ObservableObject {
     }
     
     // Fetches and updates the editor's choice movies
-    func getMoviesEditorsChoice() async throws {
+    public func getMoviesEditorsChoice() async throws {
         isLoading = true
         let editorsChoiceResponse = try await service.getEditorsChoice()
         if let items = editorsChoiceResponse.items {
@@ -36,7 +36,7 @@ final class TmdbManager: ObservableObject {
     }
     
     // Fetches and updates the details for a single movie based on its ID
-    func getMovieDetails(id: String) async throws {
+    public func getMovieDetails(id: String) async throws {
         isLoading = true
         let movieDetail = try await service.getMovieDetails(id: id)
         movieDetails = movieDetail
@@ -44,7 +44,7 @@ final class TmdbManager: ObservableObject {
     }
     
     // Fetches and appends movies from the Discover API to the existing discover list, supporting pagination
-    func getMovieDiscover(page: Int, movieList: DiscoverMovieList) async throws {
+    public func getMovieDiscover(page: Int, movieList: DiscoverMovieList) async throws {
         isLoading = true
         let discover = try await service.getDiscover(page: page, movieList: movieList)
         if let items = discover.results {
@@ -54,7 +54,7 @@ final class TmdbManager: ObservableObject {
     }
     
     // Executes a search query and filters out results without images, updates searchResults
-    func searchFor(query: String) async throws {
+    public func searchFor(query: String) async throws {
         isLoading = true
         let searchResponse = try await service.searchFor(query: query)
         if let results = searchResponse.results {
@@ -65,7 +65,7 @@ final class TmdbManager: ObservableObject {
     }
     
     // Fetches available watch providers for a specific movie by its ID, useful for region-specific viewing options
-    func getMovieWatchProviders(movieId: String) async throws {
+    public func getMovieWatchProviders(movieId: String) async throws {
         isLoading = true
         let movieWatchProviders = try await service.getMovieWatchProviders(movieId: movieId)
         self.movieWatchProviders = movieWatchProviders.results // Maps movie ID to available watch providers

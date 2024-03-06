@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Endpoint {
+public protocol Endpoint {
     // Basic requirement for any API endpoint
     var scheme: String { get }
     var host: String { get }
@@ -18,7 +18,7 @@ protocol Endpoint {
     var queryItems: [URLQueryItem]? { get }
 }
 
-enum RequestMethod: String {
+public enum RequestMethod: String {
     // HTTP methods represented as an enum for type safety
     case delete = "DELETE"
     case get = "GET"
@@ -27,7 +27,7 @@ enum RequestMethod: String {
     case put = "PUT"
 }
 
-extension Endpoint {
+public extension Endpoint {
     // Common values for scheme and host to avoid repetition in conforming types
     var scheme: String {
         return "https"
@@ -38,12 +38,12 @@ extension Endpoint {
     }
 }
 
-protocol HTTPClient {
+public protocol HTTPClient {
     // Protocol definition for making a network request expecting a Decodable response
     func request<T: Decodable>(endpoint: Endpoint, responseModel: T.Type, decoder: JSONDecoder?) async throws -> T
 }
 
-extension HTTPClient {
+public extension HTTPClient {
     private var apiToken: String {
         // Securely fetching the API token; should ideally be stored securely (ex. Plist, Keychain, or other ways)
         return "ae7efbeb3042a1c9747a463a463af76d"
@@ -127,7 +127,7 @@ extension HTTPClient {
     }
 }
 
-enum RequestError: Error {
+public enum RequestError: Error {
     // Representation of various error states from network requests
     case decode
     case invalidURL
