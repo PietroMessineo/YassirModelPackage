@@ -8,6 +8,11 @@
 import Foundation
 
 public struct EditorsChoiceResponse: Codable, Identifiable, Equatable {
+    public init(id: Int, items: [Items]?) {
+        self.id = id
+        self.items = items
+    }
+    
     public let id: Int
     public let items: [Items]?
 }
