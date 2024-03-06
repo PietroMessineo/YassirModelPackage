@@ -21,7 +21,7 @@ public final class TmdbManager: ObservableObject {
     @Published public var searchResults: [SearchResult] = [] // Stores results from a search query
     @Published public var movieWatchProviders: [String: CountryResult] = [:] // Key-Value pairs of movie IDs and their available watch providers by country
     
-    init(service: TmdbServiceProtocol = TmdbService()) {
+    public init(service: TmdbServiceProtocol = TmdbService()) {
         self.service = service
     }
     

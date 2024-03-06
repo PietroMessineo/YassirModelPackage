@@ -9,6 +9,8 @@ import Foundation
 import ComponentsPackage
 
 public struct TmdbService: HTTPClient {
+    public init() {}
+    
     public func getEditorsChoice() async throws -> EditorsChoiceResponse {
         return try await request(
             endpoint: TmdbEndpoint.editorsChoice, responseModel: EditorsChoiceResponse.self, decoder: .customDateDecoder
