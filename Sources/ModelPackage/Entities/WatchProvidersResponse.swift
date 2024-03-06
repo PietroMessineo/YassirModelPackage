@@ -9,14 +9,14 @@ import Foundation
 
 public struct WatchProvidersResponse: Codable, Identifiable {
     public let id: Int
-    let results: [String: CountryResult]
+    public let results: [String: CountryResult]
 }
 
 public struct CountryResult: Codable {
-    let link: String
-    let buy, rent, flatrate: [Provider]?
+    public let link: String
+    public let buy, rent, flatrate: [Provider]?
 
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case link, buy, rent
         case flatrate = "flatrate"
     }
@@ -24,13 +24,13 @@ public struct CountryResult: Codable {
 
 public struct Provider: Codable, Identifiable {
     public let id = UUID().uuidString
-    let logoPath: String
-    let providerID: Int
-    let providerName: String
-    let displayPriority: Int
-    var subtitle: String?
+    public let logoPath: String
+    public let providerID: Int
+    public let providerName: String
+    public let displayPriority: Int
+    public var subtitle: String?
 
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case logoPath = "logo_path"
         case providerID = "provider_id"
         case providerName = "provider_name"

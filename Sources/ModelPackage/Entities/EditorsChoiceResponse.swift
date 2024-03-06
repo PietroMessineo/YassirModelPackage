@@ -9,13 +9,13 @@ import Foundation
 
 public struct EditorsChoiceResponse: Codable, Identifiable, Equatable {
     public let id: Int
-    let items: [Items]?
+    public let items: [Items]?
 }
 
 public struct Items: Codable, Identifiable, Equatable {
-    let backdrop_path: String?
+    public let backdrop_path: String?
     public let id: Int
-    let original_title: String?
-    let release_date: Date?
-    let poster_path: String?
+    public let original_title: String?
+    public let release_date: Date?
+    public let poster_path: String?
 }

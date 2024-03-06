@@ -8,5 +8,5 @@
 import Foundation
 
 public struct DiscoverResponse: Codable {
-    let results: [Items]?
+    public let results: [Items]?
 }

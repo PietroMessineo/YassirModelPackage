@@ -8,21 +8,21 @@
 import Foundation
 
 public struct SearchResponse: Codable {
-    let results: [SearchResult]?
+    public let results: [SearchResult]?
 }
 
 public struct SearchResult: Codable, Identifiable, Hashable {
-    let backdrop_path: String?
+    public let backdrop_path: String?
     public let id: Int
-    let name: String?
-    let title: String?
-    let original_language: String?
-    let original_name: String?
-    let original_title: String?
-    let poster_path: String?
-    let media_type: String?
-    let first_air_date: Date?
-    let release_date: Date?
-    let known_for_department: String?
-    let profile_path: String?
+    public let name: String?
+    public let title: String?
+    public let original_language: String?
+    public let original_name: String?
+    public let original_title: String?
+    public let poster_path: String?
+    public let media_type: String?
+    public let first_air_date: Date?
+    public let release_date: Date?
+    public let known_for_department: String?
+    public let profile_path: String?
 }
