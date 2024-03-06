@@ -8,12 +8,14 @@
 import Foundation
 
 public class MockTmdbService: TmdbServiceProtocol {
-    var shouldReturnError: Bool = false
-    var editorsChoiceResponseToReturn: EditorsChoiceResponse?
-    var movieDetailsToReturn: MovieDetailsResponse?
-    var movieDiscoverToReturn: DiscoverResponse?
-    var searchToReturn: SearchResponse?
-    var watchProvidersToReturn: WatchProvidersResponse?
+    public var shouldReturnError: Bool = false
+    public var editorsChoiceResponseToReturn: EditorsChoiceResponse?
+    public var movieDetailsToReturn: MovieDetailsResponse?
+    public var movieDiscoverToReturn: DiscoverResponse?
+    public var searchToReturn: SearchResponse?
+    public var watchProvidersToReturn: WatchProvidersResponse?
+    
+    public init() {}
     
     public func getEditorsChoice() async throws -> EditorsChoiceResponse {
         if shouldReturnError {
