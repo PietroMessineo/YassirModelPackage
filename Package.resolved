@@ -1,0 +1,15 @@
+{
+  "originHash" : "a055028a6b12cac4fb6083b1e9b9ca572431ef643680515c84d222b60c61e4e2",
+  "pins" : [
+    {
+      "identity" : "yassircomponentspackage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/PietroMessineo/YassirComponentsPackage",
+      "state" : {
+        "branch" : "main",
+        "revision" : "f6a2c04d2fba11b2c0e57b414d9c30112183dd06"
+      }
+    }
+  ],
+  "version" : 3
+}

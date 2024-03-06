@@ -14,13 +14,13 @@ let package = Package(
             targets: ["ModelPackage"]),
     ],
     dependencies: [
-        
+        .package(url: "https://github.com/PietroMessineo/YassirComponentsPackage", branch: "main")
     ],
     targets: [
         .target(
             name: "ModelPackage",
             dependencies: [
-                // "ComponentsPackage"
+                .product(name: "ComponentsPackage", package: "YassirComponentsPackage")
             ]),
         .testTarget(
             name: "ModelPackageTests",
