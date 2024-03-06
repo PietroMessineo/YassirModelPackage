@@ -14,12 +14,12 @@ public final class TmdbManager: ObservableObject {
     let service: TmdbServiceProtocol
     
     // Properties to track and update UI states and data
-    @Published var isLoading = false // Indicates network activity
-    @Published var movieEditorsChoice: [Items]? // Stores editor's choice movie list
-    @Published var movieDetails: MovieDetailsResponse? // Stores details for a specific movie
-    @Published var movieDiscoverList: [Items] = [] // Stores list of movies fetched from "Discover" API
-    @Published var searchResults: [SearchResult] = [] // Stores results from a search query
-    @Published var movieWatchProviders: [String: CountryResult] = [:] // Key-Value pairs of movie IDs and their available watch providers by country
+    @Published public var isLoading = false // Indicates network activity
+    @Published public var movieEditorsChoice: [Items]? // Stores editor's choice movie list
+    @Published public var movieDetails: MovieDetailsResponse? // Stores details for a specific movie
+    @Published public var movieDiscoverList: [Items] = [] // Stores list of movies fetched from "Discover" API
+    @Published public var searchResults: [SearchResult] = [] // Stores results from a search query
+    @Published public var movieWatchProviders: [String: CountryResult] = [:] // Key-Value pairs of movie IDs and their available watch providers by country
     
     init(service: TmdbServiceProtocol = TmdbService()) {
         self.service = service
